@@ -43,34 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            const btn = this.querySelector('.submit-btn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<span>发送中...</span><span>⏳</span>';
-            btn.style.opacity = '0.7';
-
-            setTimeout(() => {
-                btn.innerHTML = '<span>发送成功！</span><span>✅</span>';
-                btn.style.background = 'linear-gradient(135deg, #4ECDC4, #95E1A3)';
-
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.background = '';
-                    btn.style.opacity = '';
-                    contactForm.reset();
-                }, 2000);
-            }, 1500);
-        });
-    }
-
     document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-12px) scale(1.02)';

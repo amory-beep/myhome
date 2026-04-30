@@ -1183,8 +1183,10 @@ body {
 
 .contact-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 760px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
 }
