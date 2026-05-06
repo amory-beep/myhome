@@ -1151,6 +1151,96 @@ body {
     margin-top: 0;
 }
 
+.roadshow {
+    padding: 110px 0;
+    background: linear-gradient(180deg, var(--bg-light) 0%, #FFF7EE 55%, white 100%);
+    position: relative;
+}
+
+.roadshow-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.roadshow-card {
+    background: white;
+    border-radius: 24px;
+    padding: 34px 30px;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.roadshow-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--memphis-blue), var(--memphis-pink), var(--memphis-yellow));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.roadshow-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+}
+
+.roadshow-card:hover::before {
+    opacity: 1;
+}
+
+.roadshow-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(74, 144, 226, 0.12);
+    font-size: 24px;
+}
+
+.roadshow-title {
+    margin-top: 14px;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--text-dark);
+}
+
+.roadshow-desc {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+.roadshow-list {
+    margin-top: 16px;
+    padding-left: 18px;
+}
+
+.roadshow-list li {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-top: 8px;
+}
+
+.roadshow-list li:first-child {
+    margin-top: 0;
+}
+
 /* ========== 联系方式 ========== */
 .contact {
     padding: 120px 0;
@@ -1571,6 +1661,10 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .roadshow-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1621,6 +1715,12 @@ body {
     .projects-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .roadshow-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
         margin: 0 auto;
     }
 
