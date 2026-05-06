@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const projects = {
         'youyouyun': {
             tag: '教育SaaS',
-            title: '优优云平台（学习平台重构）',
+            title: '优优云平台',
             subtitle: '主导学习平台重构，聚焦用户体验与流程简化，推进 2.x→4.x 多版本规划与交付落地。',
             sections: [
                 {
@@ -118,24 +118,24 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'huirongke': {
             tag: '增长/电商',
-            title: '汇容客（App & B2B商城 & 营销小程序）',
+            title: '汇容客',
             subtitle: '围绕增长与交易转化，推进 App 体验重构，并落地 Web 与小程序从 0 到 1 的产品构建。',
             sections: [
                 {
-                    title: '汇容客（App）',
+                    title: '汇容客 App',
                     items: [
                         '通过分析用户转化路径与用户画像，完成产品调性重构与内容优化。',
                         '上线后 DAU 达万级，留存提升 80%。'
                     ]
                 },
                 {
-                    title: '汇容搜 B2B 商城（Web）',
+                    title: '汇容搜 B2B 商城 Web',
                     items: [
                         '从 0 到 1 完成产品构建：市场调研、用户画像、竞品分析、功能设计、项目推进与产品测试等全流程。'
                     ]
                 },
                 {
-                    title: '汇容销（营销工具小程序）',
+                    title: '汇容销 营销工具小程序',
                     items: [
                         '从 0 到 1 完成产品构建：市场调研、用户分析、竞品分析、功能设计、项目推进、产品测试与产品宣导等研发全流程。'
                     ]
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'ole-travel': {
             tag: '战略/体验',
-            title: '欧了出行（新能源网约车优化）',
+            title: '欧了出行',
             subtitle: '参与增长瓶颈期的重新定位与体验优化研究，确定核心竞争点并输出多触点优化方向。',
             sections: [
                 {
