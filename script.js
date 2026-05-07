@@ -167,41 +167,206 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    const roadshows = {
+        'support': {
+            tag: '路演落地',
+            title: '项目技术支持',
+            subtitle: '负责项目全流程技术支持相关工作，围绕院校场景及售前、交付环节，精准落实各项技术服务，保障项目顺利推进。',
+            media: [
+                { src: 'images/8.jpg', alt: '项目技术支持现场' },
+                { src: 'images/9.jpg', alt: '项目技术支持现场' }
+            ],
+            sections: [
+                {
+                    title: '院校线下技能大赛技术支持',
+                    items: [
+                        '聚焦院校线下技能大赛场景，全程提供全方位技术支撑，确保大赛顺利开展。',
+                        '赛前系统部署：根据大赛需求搭建适配的软硬件环境，完成系统安装、参数配置、网络调试等操作，保障系统稳定性与兼容性。',
+                        '赛前线下全面测试：模拟大赛全流程场景，排查系统漏洞、运行故障及网络隐患，优化系统响应速度，避免比赛过程中出现技术问题。',
+                        '系统培训：面向参赛师生及工作人员讲解系统操作流程、功能模块、注意事项及常见问题解决方法，确保相关人员熟练掌握系统使用技巧，保障大赛期间系统操作顺畅。'
+                    ]
+                },
+                {
+                    title: '售前阶段系统培训与演示',
+                    items: [
+                        '配合售前环节开展技术服务，助力客户了解系统核心价值与使用方法。',
+                        '定制演示方案：根据客户（主要为院校）需求定制专属培训演示方案，现场进行系统功能演示，直观展示系统的核心优势、操作逻辑及适配院校教学、管理的相关功能。',
+                        '专业答疑：针对客户提出的技术疑问，进行专业、细致的系统讲解，结合院校实际应用场景解读系统的适配性与实用性。',
+                        '协同对接：协助售前团队解答系统部署、后期维护、功能拓展等方面需求，配合完成客户沟通对接，提升客户对系统的认可度。'
+                    ]
+                },
+                {
+                    title: '院校线下交付部署',
+                    items: [
+                        '负责院校场景下系统线下交付与部署实施，确保系统成功落地并正常投入使用。',
+                        '交付规划：提前与院校对接交付需求，确认部署场地、软硬件条件及时间节点，制定详细交付部署计划。',
+                        '现场部署：完成系统安装、调试、数据迁移、权限配置等全流程工作，严格按标准规范操作，保障部署质量。',
+                        '试运行与培训：部署完成后开展试运行测试，排查潜在问题并优化运行效果；对院校管理人员进行操作及维护培训，讲解日常注意事项与基础故障排查方法，确保院校可独立顺畅使用系统并完成验收。'
+                    ]
+                }
+            ]
+        },
+        'training': {
+            tag: '路演落地',
+            title: '培训交流',
+            subtitle: '培训交流相关工作核心围绕内部赋能与外部客户宣讲两大核心方向，独立推进各项培训工作落地，助力产品推广与客户认知提升。',
+            media: [
+                { src: 'images/5.jpg', alt: '培训交流现场' },
+                { src: 'images/6.jpg', alt: '培训交流现场' },
+                { src: 'images/7.jpg', alt: '培训交流现场' }
+            ],
+            sections: [
+                {
+                    title: '内部营销人员系统讲解培训',
+                    items: [
+                        '专项负责内部营销人员的产品系统讲解培训，帮助营销人员深度理解产品、精准提炼卖点，提升产品推广专业性。',
+                        '培训准备：结合产品技术原理、核心功能模块及应用场景梳理培训重点，编制贴合营销人员需求的培训课件，将复杂技术内容转化为通俗易懂的讲解要点。',
+                        '培训实施：通过理论讲解、案例分析、现场演示等方式，拆解产品核心优势、功能亮点及差异化特色；结合不同客户群体需求指导提炼适配卖点与推广重点。',
+                        '培训复盘：收集营销人员疑问并针对性答疑，协助梳理推广思路，确保营销人员熟练掌握产品核心逻辑并精准传递产品价值。'
+                    ]
+                },
+                {
+                    title: '公司目标客户培训宣讲全流程实施',
+                    items: [
+                        '参与公司定期面向目标客户的培训宣讲活动，独立负责新技术、新产品培训会全流程实施，确保宣讲效果达标。',
+                        '前期筹备：调研目标客户行业特点、实际需求与核心痛点，结合新技术/新产品特性梳理宣讲核心内容与重点，编制贴合客户需求的宣讲课件，设计简洁易懂、互动性强的宣讲方式。',
+                        '宣讲实施：独立开展现场宣讲，清晰讲解核心功能、应用场景、使用优势与落地价值；及时回应客户疑问，灵活调整宣讲节奏与内容，提升客户参与度。',
+                        '宣讲复盘：收集客户反馈，整理宣讲过程问题与不足形成总结报告，为后续宣讲优化提供参考，提升客户对公司产品的认知度与认可度。'
+                    ]
+                }
+            ]
+        }
+    };
+
+    const escapeHtml = (value) => {
+        return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    };
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxPrev = lightbox ? lightbox.querySelector('[data-lightbox-prev]') : null;
+    const lightboxNext = lightbox ? lightbox.querySelector('[data-lightbox-next]') : null;
+    let lightboxItems = [];
+    let lightboxIndex = 0;
+
+    const closeLightbox = () => {
+        if (!lightbox || !lightbox.classList.contains('active')) return;
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = projectModal && projectModal.classList.contains('active') ? 'hidden' : '';
+    };
+
+    const renderLightbox = () => {
+        if (!lightbox || !lightboxImage) return;
+        const item = lightboxItems[lightboxIndex];
+        if (!item) return;
+        lightboxImage.src = item.src;
+        lightboxImage.alt = item.alt || '';
+        if (lightboxCaption) lightboxCaption.textContent = item.alt || '';
+        if (lightboxPrev) lightboxPrev.disabled = lightboxItems.length <= 1;
+        if (lightboxNext) lightboxNext.disabled = lightboxItems.length <= 1;
+    };
+
+    const openLightbox = (items, index) => {
+        if (!lightbox || !Array.isArray(items) || !items.length) return;
+        lightboxItems = items;
+        lightboxIndex = Math.min(Math.max(Number(index) || 0, 0), items.length - 1);
+        renderLightbox();
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        const closeBtn = lightbox.querySelector('[data-lightbox-close]');
+        if (closeBtn) closeBtn.focus();
+    };
+
+    const stepLightbox = (delta) => {
+        if (!lightbox || !lightbox.classList.contains('active')) return;
+        if (lightboxItems.length <= 1) return;
+        lightboxIndex = (lightboxIndex + delta + lightboxItems.length) % lightboxItems.length;
+        renderLightbox();
+    };
+
     const renderModal = (project) => {
         if (!project) return;
         projectModalTag.textContent = project.tag;
         projectModalTitle.textContent = project.title;
         projectModalSubtitle.textContent = project.subtitle;
-        projectModalBody.innerHTML = project.sections.map(section => {
+        const sectionsHtml = project.sections.map(section => {
             const paragraphs = (section.paragraphs || []).map(p => `<p>${p}</p>`).join('');
+            const media = (section.media || []).length
+                ? `<div class="modal-media-grid">${section.media.map(m => `<img src="${escapeHtml(m.src)}" alt="${escapeHtml(m.alt || '')}" loading="lazy" decoding="async">`).join('')}</div>`
+                : '';
             const items = (section.items || []).length
                 ? `<ul class="project-modal-list">${section.items.map(i => `<li>${i}</li>`).join('')}</ul>`
                 : '';
+            if (media) {
+                return `<div class="project-modal-section project-modal-section--with-media"><div class="modal-media">${media}</div><div class="modal-copy"><h3>${section.title}</h3>${paragraphs}${items}</div></div>`;
+            }
             return `<div class="project-modal-section"><h3>${section.title}</h3>${paragraphs}${items}</div>`;
         }).join('');
+        const gallery = (project.media || []).length
+            ? `<div class="project-modal-section roadshow-gallery"><div class="roadshow-gallery-header"><h3>现场图集</h3><div class="roadshow-gallery-actions"><button type="button" class="roadshow-gallery-btn" data-gallery-prev aria-label="向左滚动">‹</button><button type="button" class="roadshow-gallery-btn" data-gallery-next aria-label="向右滚动">›</button></div></div><div class="roadshow-gallery-track" data-gallery-track>${project.media.map((m, idx) => `<button type="button" class="roadshow-gallery-item" data-gallery-index="${idx}" aria-label="查看大图：${escapeHtml(m.alt || '现场图')}"><img src="${escapeHtml(m.src)}" alt="${escapeHtml(m.alt || '')}" loading="lazy" decoding="async"></button>`).join('')}</div></div>`
+            : '';
+        if (gallery && project.tag === '路演落地') {
+            projectModalBody.innerHTML = `${sectionsHtml}${gallery}`;
+            const track = projectModalBody.querySelector('[data-gallery-track]');
+            if (track) {
+                const scrollByCard = (dir) => {
+                    const first = track.querySelector('.roadshow-gallery-item');
+                    const step = first ? first.getBoundingClientRect().width + 12 : 260;
+                    track.scrollBy({ left: dir * step, behavior: 'smooth' });
+                };
+                const prevBtn = projectModalBody.querySelector('[data-gallery-prev]');
+                const nextBtn = projectModalBody.querySelector('[data-gallery-next]');
+                if (prevBtn) prevBtn.addEventListener('click', () => scrollByCard(-1));
+                if (nextBtn) nextBtn.addEventListener('click', () => scrollByCard(1));
+                track.querySelectorAll('.roadshow-gallery-item[data-gallery-index]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = Number(btn.getAttribute('data-gallery-index')) || 0;
+                        openLightbox(project.media, idx);
+                    });
+                });
+            }
+            return;
+        }
+        projectModalBody.innerHTML = `${gallery}${sectionsHtml}`;
     };
 
     const closeProjectModal = () => {
         if (!projectModal || !projectModal.classList.contains('active')) return;
         projectModal.classList.remove('active');
+        projectModal.classList.remove('is-roadshow');
         projectModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        document.body.style.overflow = lightbox && lightbox.classList.contains('active') ? 'hidden' : '';
         if (closeProjectModal.lastActiveElement && typeof closeProjectModal.lastActiveElement.focus === 'function') {
             closeProjectModal.lastActiveElement.focus();
         }
+    };
+
+    const openModal = (payload, triggerEl) => {
+        if (!projectModal) return;
+        if (!payload) return;
+        closeProjectModal.lastActiveElement = triggerEl || document.activeElement;
+        projectModal.classList.toggle('is-roadshow', payload.tag === '路演落地');
+        renderModal(payload);
+        projectModal.classList.add('active');
+        projectModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        const closeBtn = projectModal.querySelector('.project-modal-close');
+        if (closeBtn) closeBtn.focus();
     };
 
     const openProjectModal = (projectId, triggerEl) => {
         if (!projectModal) return;
         const project = projects[projectId];
         if (!project) return;
-        closeProjectModal.lastActiveElement = triggerEl || document.activeElement;
-        renderModal(project);
-        projectModal.classList.add('active');
-        projectModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        const closeBtn = projectModal.querySelector('[data-modal-close]');
-        if (closeBtn) closeBtn.focus();
+        openModal(project, triggerEl);
     };
 
     document.querySelectorAll('.project-card[data-project]').forEach(card => {
@@ -216,12 +381,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    document.querySelectorAll('.roadshow-card[data-roadshow]').forEach(card => {
+        card.addEventListener('click', () => {
+            openModal(roadshows[card.getAttribute('data-roadshow')], card);
+        });
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal(roadshows[card.getAttribute('data-roadshow')], card);
+            }
+        });
+    });
+
     if (projectModal) {
         projectModal.querySelectorAll('[data-modal-close]').forEach(el => {
             el.addEventListener('click', closeProjectModal);
         });
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeProjectModal();
+        });
+    }
+
+    if (lightbox) {
+        lightbox.querySelectorAll('[data-lightbox-close]').forEach(el => {
+            el.addEventListener('click', closeLightbox);
+        });
+        if (lightboxPrev) lightboxPrev.addEventListener('click', () => stepLightbox(-1));
+        if (lightboxNext) lightboxNext.addEventListener('click', () => stepLightbox(1));
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') stepLightbox(-1);
+            if (e.key === 'ArrowRight') stepLightbox(1);
         });
     }
 
